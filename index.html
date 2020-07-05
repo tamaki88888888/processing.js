@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+ <head>
+  <title>Processing Sample</title>
+  <script type="text/javascript" src="processing.js"></script>
+  <script type="text/javascript">
+window.onload = function() {
+  var canvas = document.getElementsByTagName('canvas')[0];
+
+  // Processing のソースコードが書かれた script 要素
+  var codeElm = document.getElementById('processing-code');
+  // 要素の内容を取得する
+  var code = codeElm.textContent || codeElm.innerText;
+
+  Processing(canvas, code);
+};
+  </script>
+  <script id="processing-code" type="application/processing">
+// ここに Processing のソースコードが書ける
+size(400, 400);
+noStroke();
+fill(255, 0, 0, 255 * 0.5);
+ellipse(200, 150, 200, 200);
+fill(0, 255, 0, 255 * 0.5);
+ellipse(250, 250, 200, 200);
+fill(0, 0, 155, 255 * 0.5);
+ellipse(150, 250, 200, 200);
+  </script>
+ </head>
+ <body>
+   <h1>Processing Sample</h1>
+  <div>
+   <canvas width="400" height="400"></canvas>
+  </div>
+ </body>
+<html>
